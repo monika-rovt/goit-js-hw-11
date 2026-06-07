@@ -11,7 +11,7 @@ const searchInput = document.querySelector('.input');
 if (form)
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
-
+clearGallery();
   const query = event.currentTarget.elements['search-text'].value.trim();
 
   // Перевірка на пустий рядок
@@ -42,7 +42,7 @@ form.addEventListener('submit', async (event) => {
     createGallery(data.hits);
     iziToast.success({
       title: 'Success',
-      message: `Ми знайшли ${data.hits} зображень!`,
+      message: `Ми знайшли ${data.hits.length} зображень!`,
       position: 'topRight',
     });
    
